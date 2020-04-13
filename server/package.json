@@ -75,7 +75,7 @@
         "@types/passport": "^1.0.1",
         "@types/passport-facebook": "^2.1.9",
         "@types/passport-local": "^1.0.33",
-        "@types/pug": "^2.0.4",
+        "@types/pug": "^2.0.4",eslint
         "@types/request": "^2.48.3",
         "@types/request-promise": "^4.1.44",
         "@types/shelljs": "^0.8.5",
