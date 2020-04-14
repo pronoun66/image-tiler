@@ -3,7 +3,7 @@ import Jimp from "jimp";
 export const TILE_SIZE = 256;
 export const TOLERABLE_CROP_SIZE = 50;
 export const EXTENDED_IMAGE_BACKGROUND_COLOUR = "#FFFFFF";
-export const OUTPUT_IMAGE_PATH = "../client/src/assets/images";
+export const OUTPUT_IMAGE_PATH = "../ui/src/assets/images";
 export const INPUT_IMAGE_PATH = "images/original.jpg";
 
 export default async (): Promise<void> => {
