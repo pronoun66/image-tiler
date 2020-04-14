@@ -1,19 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './style.css';
 import { RouteComponentProps } from 'react-router';
 
 export namespace App {
   export interface Props extends RouteComponentProps<void> {}
-  export interface Params {
-    level: string
-  }
 }
 
 export const App = ({ match }: App.Props) => {
-  const {level = 10} = match.params as any
-
-  console.log(match.params)
-  console.log(level)
+  const [level, setLevel] = useState(5);
 
   const getImageTiles = () => {
     const numTileX = 20;
@@ -40,11 +34,33 @@ export const App = ({ match }: App.Props) => {
     return result;
   }
 
+  const onChange = (event: any) => {
+    let value = event.target.value;
+    if (value < 0) {
+      value = 0;
+    }
+
+    if (value > 12) {
+      value = 12
+    }
+    setLevel(value)
+  }
+
   return (
-    <div className={style.container}>
-      {
-        getImageTiles()
-      }
+    <div>
+      level &nbsp; &nbsp;
+      <input
+        type="number"
+        name="level"
+        value={level}
+        onChange={onChange}
+      />
+
+      <div className={style.container}>
+        {
+          getImageTiles()
+        }
+      </div>
     </div>
   );
 };

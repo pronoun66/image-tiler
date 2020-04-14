@@ -7,7 +7,6 @@ import { hot } from 'react-hot-loader';
 export const App = hot(module)(() => (
   <Switch>
     <Route path="/todo" component={TodoApp} />
-    <Route path="/:level" component={ImageTilerApp} />
     <Route path="/" component={ImageTilerApp} />
   </Switch>
 ));

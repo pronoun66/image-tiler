@@ -52,13 +52,13 @@ export const tileImage = async (image: any, resizedWidth: number, resizedHeight:
   const offsetHeight = Math.ceil((resizedHeight - tileTotalHeight) / 2);
 
   let newImage;
-  if (offsetWidth > 0 && offsetHeight > 0) {
+  if (offsetWidth >= 0 && offsetHeight >= 0) {
     newImage = image.crop(offsetWidth, offsetHeight, tileTotalWidth, tileTotalHeight).clone();
-  } else if (offsetWidth > 0 && offsetHeight < 0) {
+  } else if (offsetWidth >= 0 && offsetHeight < 0) {
     newImage = (await new Jimp(resizedWidth, tileTotalHeight, EXTENDED_IMAGE_BACKGROUND_COLOUR))
       .composite(image.resize(resizedWidth, resizedHeight), 0, -offsetHeight)
       .crop(offsetWidth, 0, tileTotalWidth, tileTotalHeight);
-  } else if (offsetWidth < 0 && offsetHeight > 0) {
+  } else if (offsetWidth < 0 && offsetHeight >= 0) {
     newImage = (await new Jimp(tileTotalWidth, resizedHeight, EXTENDED_IMAGE_BACKGROUND_COLOUR))
       .composite(image.resize(resizedWidth, resizedHeight), -offsetWidth, 0)
       .crop(0, offsetHeight, tileTotalWidth, tileTotalHeight);
