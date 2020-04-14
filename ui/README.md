@@ -18,6 +18,6 @@ Launch website
 $ npm start
 ```
 
-then open `http://localhost:3000/` in chrome
+then open [http://localhost:3000/](http://localhost:3000/)
 
 ## Sample

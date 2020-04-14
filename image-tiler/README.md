@@ -25,3 +25,7 @@ check result in `OUTPUT_IMAGE_PATH` folder
 ```
 $ npm test
 ```
+
+## TODO
+1. add more integration tests to check created image files
+2. add more unit tests for image extension and & crop function
